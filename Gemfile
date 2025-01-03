@@ -34,6 +34,7 @@ gem 'shortener' # For URL shortening
 gem 'jwt'
 gem 'byebug', platforms: %i[ mri mingw x64_mingw ]
 gem 'http'
+gem 'mime-types'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

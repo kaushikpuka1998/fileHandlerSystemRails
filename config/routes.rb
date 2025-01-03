@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   # Custom routes for uploading and fetching files
     post 'users/upload', to: 'users#upload'
     get 'users/files', to: 'users#files'
+    post 'users/files/delete', to: 'users#delete_file'
   end
+
 
   get '/s/:short_code', to: 'short_url#redirect', as: :shortened
 end

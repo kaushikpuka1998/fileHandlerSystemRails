@@ -5,6 +5,7 @@ class CreateAttachments < ActiveRecord::Migration[7.0]
       t.string :file
       t.string :title
       t.string :url
+      t.string :type
       t.text :description
 
       t.timestamps
