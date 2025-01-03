@@ -32,7 +32,8 @@ gem 'aws-sdk-s3' # For file storage
 gem 'mini_magick' # For image compression
 gem 'shortener' # For URL shortening
 gem 'jwt'
-
+gem 'byebug', platforms: %i[ mri mingw x64_mingw ]
+gem 'http'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

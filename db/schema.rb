@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_03_114503) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_03_163548) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,25 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_03_114503) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "attachments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "file"
+    t.string "title"
+    t.string "url"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_attachments_on_user_id"
+  end
+
+  create_table "shortened_urls", force: :cascade do |t|
+    t.string "original_url"
+    t.string "short_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["short_code"], name: "index_shortened_urls_on_short_code"
+  end
+
   create_table "uploaded_files", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -66,5 +85,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_03_114503) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "attachments", "users"
   add_foreign_key "uploaded_files", "users"
 end
