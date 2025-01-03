@@ -1,6 +1,7 @@
 # README
 -  rvm use ruby-3.0.0 
 -  make a database in postgresql  "filehandlersystem_development"
+-  rails active_storage:install
 -  rake db:migrate
 -  rails s
 
