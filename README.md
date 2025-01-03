@@ -1,8 +1,8 @@
 # README
 -  rvm use ruby-3.0.0 
 -  make a database in postgresql  "filehandlersystem_development"
--  rake db:migrate \n
--  rails s \n
+-  rake db:migrate
+-  rails s
 
 For SignUP
 ```
@@ -18,7 +18,7 @@ curl --location 'http://localhost:3000/users' \
 '
 
 ```
-OutPut
+Output
 ```
 {
     "message": "Signed up successfully",
